@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SSSIHMS Heart Companion | Recovery Tracker</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Lexend:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#b0b3ae",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#4b6552",
+                        "tertiary-fixed": "#e7f1e5",
+                        "error-container": "#fa746f",
+                        "on-secondary": "#e3feff",
+                        "inverse-on-surface": "#9d9d9a",
+                        "on-error-container": "#6e0a12",
+                        "inverse-primary": "#daf8df",
+                        "surface-bright": "#faf9f6",
+                        "on-primary-fixed-variant": "#47614e",
+                        "secondary-fixed": "#c0eaec",
+                        "tertiary-dim": "#4c554d",
+                        "primary-fixed": "#ccead1",
+                        "on-secondary-fixed-variant": "#3a6264",
+                        "on-primary": "#e7ffea",
+                        "tertiary-container": "#e7f1e5",
+                        "surface-container": "#eeeeea",
+                        "surface-container-high": "#e7e9e4",
+                        "secondary": "#3d6668",
+                        "on-secondary-fixed": "#1c4547",
+                        "secondary-container": "#c0eaec",
+                        "primary-fixed-dim": "#bedcc4",
+                        "on-tertiary-container": "#515b52",
+                        "error-dim": "#67040d",
+                        "background": "#faf9f6",
+                        "on-surface-variant": "#5d605c",
+                        "tertiary-fixed-dim": "#d8e2d7",
+                        "secondary-fixed-dim": "#b2dcde",
+                        "outline": "#797b78",
+                        "on-error": "#fff7f6",
+                        "primary": "#4b6552",
+                        "on-tertiary-fixed-variant": "#5b655c",
+                        "on-secondary-container": "#30585a",
+                        "inverse-surface": "#0d0f0d",
+                        "error": "#a83836",
+                        "primary-dim": "#3f5946",
+                        "tertiary": "#586159",
+                        "on-surface": "#303330",
+                        "on-tertiary": "#f2fcf0",
+                        "on-primary-fixed": "#2c4533",
+                        "surface-container-low": "#f4f4f0",
+                        "surface-variant": "#e1e3de",
+                        "on-primary-container": "#3e5845",
+                        "surface-container-highest": "#e1e3de",
+                        "surface-dim": "#d9dbd6",
+                        "secondary-dim": "#31595b",
+                        "on-tertiary-fixed": "#3f4941",
+                        "on-background": "#303330",
+                        "surface": "#faf9f6",
+                        "primary-container": "#ccead1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(250, 249, 246, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #faf9f6;
+            color: #303330;
+        }
+        h1, h2, h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .pill-gradient {
+            background: linear-gradient(135deg, #4b6552 0%, #3f5946 100%);
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header shadow-[0px_0px_32px_0px_rgba(48,51,48,0.06)] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden">
+<img alt="SSSIHMS Logo" class="w-full h-full object-contain p-0.5" src="https://lh3.googleusercontent.com/aida/ADBb0ug61LmYEmmHdvOUmhVQ79GRZossJiExMZ3n3uHjiLepajcGk2DUWXVZIW64UR9Rl-QsNLP_ibTK3jnoTdUiKdkNt4w_3ys8mhveGapL99a4C-0yt-X1I1jzj6DOPyIzzoJPrvgJMMG9-4FhimLin9dBPu7xai_8Mr9Vziwg5DMDipFgh-S4KVtG_ec95tFEm55Y4AwFq_Q7XsDq55AHBWL7DWUnItvqNGMH27RMT8Ai_N5KAmoz-PXxxAe2wCdBbNreojcL1r412w"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline font-bold tracking-tight text-primary text-lg leading-tight">SSSIHMS Heart Companion</span>
+<span class="font-body text-[10px] text-outline uppercase tracking-[0.2em] font-bold">Sairam</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-all duration-300">
+<span class="material-symbols-outlined text-primary">language</span>
+</button>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Hero Section: Daily Progress -->
+<section class="mb-10">
+<div class="flex items-end justify-between mb-6">
+<div>
+<h2 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight">Gentle Progress</h2>
+<p class="text-on-surface-variant font-body mt-1">Consistency is your path to healing.</p>
+</div>
+<div class="text-right">
+<span class="text-xs font-bold text-outline block uppercase tracking-wider mb-1">Today's Goal</span>
+<span class="text-2xl font-headline font-bold text-primary">15 min</span>
+</div>
+</div>
+<!-- Walking Progress Card -->
+<div class="bg-surface-container-lowest rounded-[2rem] p-8 shadow-[0px_0px_32px_0px_rgba(48,51,48,0.06)] relative overflow-hidden">
+<div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+<!-- Progress Ring -->
+<div class="relative w-40 h-40">
+<svg class="w-full h-full -rotate-90" viewbox="0 0 100 100">
+<circle class="text-surface-container-low" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-width="10"></circle>
+<circle class="text-secondary" cx="50" cy="50" fill="transparent" r="42" stroke="currentColor" stroke-dasharray="264" stroke-dashoffset="80" stroke-linecap="round" stroke-width="10"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-3xl font-headline font-extrabold text-on-surface">12</span>
+<span class="text-[10px] font-bold text-outline uppercase">Minutes</span>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">directions_walk</span>
+<h3 class="font-headline font-bold text-lg text-on-surface">Morning Walk</h3>
+</div>
+<p class="text-sm text-on-surface-variant font-body mb-6">Keep a steady, conversational pace. You're doing great!</p>
+<button class="pill-gradient w-full py-4 rounded-full text-on-primary font-headline font-bold shadow-lg shadow-primary/20 flex items-center justify-center gap-2">
+<span>Update Progress</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Exercise Dos & Don'ts (Asymmetric Grid) -->
+<section class="mb-12">
+<h3 class="text-xl font-headline font-bold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">health_and_safety</span>
+            Exercise Guidelines
+        </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Dos -->
+<div class="bg-primary-container/30 rounded-[1.5rem] p-6">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary font-bold">check_circle</span>
+</div>
+<span class="font-headline font-bold text-on-primary-container">Safe Choices</span>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+<p class="text-sm text-on-primary-container leading-relaxed"><strong class="block">Warm-up</strong> Spend 5 minutes slowly preparing your heart.</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+<p class="text-sm text-on-primary-container leading-relaxed"><strong class="block">Steady Pace</strong> Walk at a speed where you can talk easily.</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+<p class="text-sm text-on-primary-container leading-relaxed"><strong class="block">Listen to Body</strong> Rest immediately if you feel tired or dizzy.</p>
+</li>
+</ul>
+</div>
+<!-- Don'ts -->
+<div class="bg-surface-container-low rounded-[1.5rem] p-6">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-on-surface-variant/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant font-bold">cancel</span>
+</div>
+<span class="font-headline font-bold text-on-surface-variant">To Avoid</span>
+</div>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-outline flex-shrink-0"></div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Heavy lifting (&gt;5kg / 10lbs)</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-outline flex-shrink-0"></div>
+<p class="text-sm text-on-surface-variant leading-relaxed">High intensity running</p>
+</li>
+<li class="flex items-start gap-3">
+<div class="mt-1 w-1.5 h-1.5 rounded-full bg-outline flex-shrink-0"></div>
+<p class="text-sm text-on-surface-variant leading-relaxed">Competitive sports</p>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Emergency Symptoms Section -->
+<section class="mb-20" id="critical-observation">
+<div class="bg-error-container/10 rounded-[2rem] p-8 border-2 border-error-container/20">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+<div>
+<h3 class="text-2xl font-headline font-extrabold text-error">Critical Observation</h3>
+<p class="text-on-surface-variant font-body">Contact your doctor if you notice these signs:</p>
+</div>
+<div class="flex items-center gap-2 bg-error-container text-on-error-container px-4 py-2 rounded-full font-bold text-sm">
+<span class="material-symbols-outlined text-lg">emergency_home</span>
+                    Medical Alert
+                </div>
+</div>
+<!-- Symptom Bento Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-error mb-2">dentistry</span>
+<span class="text-xs font-headline font-bold">Bleeding Gums</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-error mb-2">tibia</span>
+<span class="text-xs font-headline font-bold">Excessive Bruising</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-error mb-2">air</span>
+<span class="text-xs font-headline font-bold">Shortness of Breath</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-error mb-2">water_drop</span>
+<span class="text-xs font-headline font-bold">Blood in Stools</span>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl shadow-sm flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-error mb-2">medical_mask</span>
+<span class="text-xs font-headline font-bold">Nosebleeds</span>
+</div>
+<div class="bg-error-container text-on-error-container p-4 rounded-2xl shadow-sm flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined mb-1">call</span>
+<span class="text-[10px] uppercase font-bold tracking-tight">Call Doctor</span>
+</div>
+</div>
+<div class="mt-8 p-4 bg-error-container/20 rounded-xl flex gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">info</span>
+<p class="text-xs text-on-error-container font-medium leading-relaxed">
+                    These symptoms may indicate issues with your medication levels. Follow the "Rule of Safety" – if in doubt, check with your cardiologist.
+                </p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pt-3 pb-8 px-4 bg-[#faf9f6] rounded-t-[1.5rem] shadow-[0px_-4px_24px_0px_rgba(48,51,48,0.04)]">
+<button class="flex flex-col items-center justify-center bg-[#4b6552]/10 text-[#4b6552] rounded-2xl px-6 py-2 transition-transform scale-95 active:scale-90">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-['Lexend'] text-xs font-medium mt-1">Care</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b0b3ae] px-6 py-2 transition-transform scale-95 active:scale-90 hover:text-[#4b6552]">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-['Lexend'] text-xs font-medium mt-1">Diet</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b0b3ae] px-6 py-2 transition-transform scale-95 active:scale-90 hover:text-[#4b6552]">
+<span class="material-symbols-outlined">directions_run</span>
+<span class="font-['Lexend'] text-xs font-medium mt-1">Activity</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#b0b3ae] px-6 py-2 transition-transform scale-95 active:scale-90 hover:text-[#4b6552]"><a class="flex flex-col items-center justify-center" href="#critical-observation">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span class="font-['Lexend'] text-xs font-medium mt-1">Safety</span>
+</a></button>
+</nav>
+</body></html>
